@@ -1,6 +1,9 @@
 ﻿namespace TP02BOX_CW_FE;
+using System.Collections.Generic;
 class Program
 {
+    static Dictionary<int, Cliente> Clientes = new Dictionary<int, Cliente>();
+    static Tiquetera tiquetera;
     static void Main(string[] args)
     {
         int menu;
@@ -33,7 +36,6 @@ class Program
     }
     
     #region frontend
-
     static int listaFunciones()
     {
         string Msj_inicio = "Bienvenido, que funcion desea usar?\n";
@@ -46,31 +48,65 @@ class Program
     }
     static int IngresarEntero(string mensaje)
     {
-            Console.WriteLine(mensaje);
-            return int.Parse(Console.ReadLine());
+        Console.WriteLine(mensaje);
+        return int.Parse(Console.ReadLine());
     }
-    static int IngresarEnteroVerif(string mensaje, int verif1, int verif2)
+    static double IngresarDouble(string mensaje)
     {
+        Console.WriteLine(mensaje);
+        return double.Parse(Console.ReadLine());
+    }
+    static int IngresarEnteroVerif(string mensaje)
+    {
+        int retorno = 0;
+        Console.WriteLine(mensaje);
+        int retorn = int.Parse(Console.ReadLine());
+        while (!(retorn <= 4 && retorn > 1))
+        {
+            Console.WriteLine("Error");
             Console.WriteLine(mensaje);
-            int retorn = int.Parse(Console.ReadLine());
-            while (!(retorn >= verif1 && retorn <= verif2))
-            {
-                Console.WriteLine("Error");
-                Console.WriteLine(mensaje);
-                retorn = int.Parse(Console.ReadLine());
-            }
-            return retorn;
+            retorn = int.Parse(Console.ReadLine());
+        }
+        switch (retorn)
+        {
+            case 1:
+            retorno = 15000;
+                break;
+            case 2:
+            retorno = 30000;
+                break;
+            case 3:
+            retorno = 10000;
+                break;
+            case 4:
+            retorno = 40000;
+                break;
+        }
+        return retorno;
+    }
+    static double IngresarDoubleVerif(string mensaje, double verif1)
+    {
+        Console.WriteLine(mensaje);
+        double retorn = double.Parse(Console.ReadLine());
+        while (retorn < verif1)
+        {
+            Console.WriteLine("Error");
+            Console.WriteLine(mensaje);
+            retorn = double.Parse(Console.ReadLine());
+        }
+        if((retorn - verif1) != 0)Console.WriteLine("El vuelto es de " + (retorn - verif1));
+        return retorn;
     }
     static string IngresarString(string mensaje)
     {
-            Console.WriteLine(mensaje);
-            return Console.ReadLine();
+        Console.WriteLine(mensaje);
+        return Console.ReadLine();
     }
     static DateTime IngresarDateTime(string mensaje)
-        {
-            Console.WriteLine(mensaje);
-            return DateTime.Parse(Console.ReadLine());
-        }
+    {
+        Console.WriteLine(mensaje);
+        return DateTime.Parse(Console.ReadLine());
+    }
     static void limpiarConsola()
     {
         Console.WriteLine("Presione una tecla para contiunar");
@@ -79,16 +115,15 @@ class Program
     }   
     #endregion
     #region backend
-    static void ObtenerBoxeador(Cliente nuevoCliente, int NumBox)
+    static void NuevaInscripcion()
     {
-        // Boxeador.nombre = IngresarEntero("Ingrese el nombre del boxeador");
-
-
-        Boxeador.Nombre = IngresarString("Ingrese el nombre del pelador N°" + NumBox);
-        Boxeador.Pais = IngresarString("Ingrese el pais del pelador N°" + NumBox);
-        Boxeador.PotenciaGolpes = IngresarEnteroVerif("Ingrese la potencia de los golpes del peleador, recuerde que tiene que ser entre 1 y 100", 1, 100);
-        Boxeador.Peso = IngresarEntero("Ingrese el peso (en KG) del peleador N°" + NumBox);
-        Boxeador.VelocidadPiernas = IngresarEnteroVerif("Ingrese la velocidad de las piernas del peleador, recuerde que tiene que ser entre 1 y 100", 1, 100);
+        int banco;
+        Clientes.Add(tiquetera.DevolverUltimoId(), (new Cliente(IngresarString(""), IngresarString(""),
+        IngresarString(""), banco = IngresarEntero(""), IngresarDoubleVerif("", banco))));
+    }
+    static void ObtenerEstadisticas()
+    {
+        
     }
     #endregion
 }
