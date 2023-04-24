@@ -1,0 +1,5 @@
+Z:\2022 - 2025 (Informatica)\Cuarto Año\Programacion\TP02BOX_CW_FE\obj\Debug\net7.0\TP02BOX_CW_FE.csproj.AssemblyReference.cache
+Z:\2022 - 2025 (Informatica)\Cuarto Año\Programacion\TP02BOX_CW_FE\obj\Debug\net7.0\TP02BOX_CW_FE.GeneratedMSBuildEditorConfig.editorconfig
+Z:\2022 - 2025 (Informatica)\Cuarto Año\Programacion\TP02BOX_CW_FE\obj\Debug\net7.0\TP02BOX_CW_FE.AssemblyInfoInputs.cache
+Z:\2022 - 2025 (Informatica)\Cuarto Año\Programacion\TP02BOX_CW_FE\obj\Debug\net7.0\TP02BOX_CW_FE.AssemblyInfo.cs
+Z:\2022 - 2025 (Informatica)\Cuarto Año\Programacion\TP02BOX_CW_FE\obj\Debug\net7.0\TP02BOX_CW_FE.csproj.CoreCompileInputs.cache

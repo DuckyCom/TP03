@@ -1,0 +1,15 @@
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\bin\Debug\net6.0\TP02BOX_CW_FE.exe
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\bin\Debug\net6.0\TP02BOX_CW_FE.deps.json
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\bin\Debug\net6.0\TP02BOX_CW_FE.runtimeconfig.json
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\bin\Debug\net6.0\TP02BOX_CW_FE.dll
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\bin\Debug\net6.0\TP02BOX_CW_FE.pdb
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\TP02BOX_CW_FE.csproj.AssemblyReference.cache
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\TP02BOX_CW_FE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\TP02BOX_CW_FE.AssemblyInfoInputs.cache
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\TP02BOX_CW_FE.AssemblyInfo.cs
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\TP02BOX_CW_FE.csproj.CoreCompileInputs.cache
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\TP02BOX_CW_FE.dll
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\refint\TP02BOX_CW_FE.dll
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\TP02BOX_CW_FE.pdb
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\TP02BOX_CW_FE.genruntimeconfig.cache
+C:\Users\47866146\Downloads\TP02BOX_CW_FE\obj\Debug\net6.0\ref\TP02BOX_CW_FE.dll
