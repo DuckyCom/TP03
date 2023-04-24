@@ -16,12 +16,15 @@ class Program
         switch (menu)
         {
             case 1:
+            NuevaInscripcion();
             limpiarConsola();
                 break;
             case 2:
+            ObtenerEstadisticas();
             limpiarConsola();
                 break;
             case 3:
+            BuscarCliente(IngresarEntero("Ingrese el ID"));
             limpiarConsola(); 
                 break;
             case 4:
@@ -123,7 +126,61 @@ class Program
     }
     static void ObtenerEstadisticas()
     {
-        
+        int CantPersonasInscriptas = 0;
+        double RecaudacionTotal = 0;
+        double dia1Recaudacion = 0, dia2Recaudacion = 0, dia3Recaudacion = 0, fullPassRecaudacion = 0;
+        int dia1 = 0, dia2 = 0, dia3 = 0, fullPass = 0;
+        CantPersonasInscriptas = Clientes.Count();
+        foreach (int x in Clientes.Keys)
+        {
+            RecaudacionTotal += Clientes[x].TotalAbonado;
+            switch (Clientes[x].TipoEntrada)
+            {
+                case 1:
+                dia1Recaudacion += Clientes[x].TotalAbonado;
+                dia1++;
+                    break;
+                case 2:
+                dia2Recaudacion += Clientes[x].TotalAbonado;
+                dia2++;
+                    break;
+                case 3:
+                dia3Recaudacion += Clientes[x].TotalAbonado;
+                dia3++;
+                    break;
+                case 4:
+                fullPassRecaudacion += Clientes[x].TotalAbonado;
+                fullPass++;
+                    break;
+            }
+        }
+    }
+    static void BuscarCliente(int x)
+    {
+        string TipoEntradaEncontrada = "";
+        switch (Clientes[x].TipoEntrada)
+                {
+                    case 1:
+                    TipoEntradaEncontrada = "Dia 1";
+                        break;
+                    case 2:
+                    TipoEntradaEncontrada = "Dia 2";
+                        break;
+                    case 3:
+                    TipoEntradaEncontrada = "Dia 3";
+                        break;
+                    case 4:
+                    TipoEntradaEncontrada = "Full pass";
+                        break;
+                }
+                Console.WriteLine("Dni N°" + Clientes[x].DNI + "\nNombre: " + Clientes[x].Nombre + "\nApellido: " + Clientes[x].Apellido +
+                "\nFecha de inscripcion: " + Clientes[x].FechaInscripcion + "\nTipo de entrada: " + TipoEntradaEncontrada +
+                "\nTotal abonado: " + Clientes[x].TotalAbonado);
+    }
+    static void CambioEntrada(int x)
+    {
+        Clientes[x].CambiarEntrada(IngresarEntero("Ingrese el nuevo tipo de entrada: \n1. Dia 1 con valor de 15.000 \n2. Dia 2 con valor de 30000 " +
+        "\n3. Dia 3 con valor de 10000 \n4. Todos los dias con valor de 40000"), IngresarDouble("Ingrese el nuevo abonado"));
     }
     #endregion
 }
