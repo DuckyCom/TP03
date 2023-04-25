@@ -25,7 +25,7 @@ class Cliente
         bool retorn = false;
         if (TotalAbonado > NuevoTotal)
         {
-            Console.WriteLine("No se puede pasar de un pase mas caro a uno mas caro");
+            Console.WriteLine("No se puede pasar de un pase mas caro a uno mas barato");
         }
         else
         {

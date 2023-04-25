@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47866146\\Downloads\\TP02BOX_CW_FE\\TP02BOX_CW_FE.csproj": {}
+    "C:\\Users\\47866146\\TP03\\TP02BOX_CW_FE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47866146\\Downloads\\TP02BOX_CW_FE\\TP02BOX_CW_FE.csproj": {
+    "C:\\Users\\47866146\\TP03\\TP02BOX_CW_FE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47866146\\Downloads\\TP02BOX_CW_FE\\TP02BOX_CW_FE.csproj",
+        "projectUniqueName": "C:\\Users\\47866146\\TP03\\TP02BOX_CW_FE.csproj",
         "projectName": "TP02BOX_CW_FE",
-        "projectPath": "C:\\Users\\47866146\\Downloads\\TP02BOX_CW_FE\\TP02BOX_CW_FE.csproj",
-        "packagesPath": "C:\\Users\\devandroid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47866146\\Downloads\\TP02BOX_CW_FE\\obj\\",
+        "projectPath": "C:\\Users\\47866146\\TP03\\TP02BOX_CW_FE.csproj",
+        "packagesPath": "C:\\Users\\47866146\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\47866146\\TP03\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\devandroid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\47866146\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

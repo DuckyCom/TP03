@@ -6,6 +6,7 @@ class Program
     static Tiquetera tiquetera;
     static void Main(string[] args)
     {
+        bool Cambio;
         int menu;
         bool Repeticion = true;
         string CalidaDespedida = "Chau";
@@ -28,7 +29,8 @@ class Program
             limpiarConsola(); 
                 break;
             case 4:
-
+            Cambio = CambioEntrada(IngresarEntero("Ingrese el ID"));
+            if (!Cambio) Console.WriteLine("No se pudo completar el cambio, seguramente sea por un error que aparezca arriba");
                 break;
             case 5:
             Console.WriteLine(CalidaDespedida);
@@ -42,10 +44,11 @@ class Program
     static int listaFunciones()
     {
         string Msj_inicio = "Bienvenido, que funcion desea usar?\n";
-        string Funciones = ("1. Cargar boxeador N°1\n"
-        + "2. Cargar boxeador N°2\n"
-        + "3. ¡Pelear!\n"
-        + "4. Salir del programa\n");
+        string Funciones = ("1. Nueva Inscripción\n"
+        + "2. Estadisticas del evento\n"
+        + "3. Buscar cliente\n"
+        + "4. Cambiar entrada de un cliente\n"
+        + "5. Salir");
         Console.WriteLine(Msj_inicio + Funciones);
         return int.Parse(Console.ReadLine());
     }
@@ -121,8 +124,10 @@ class Program
     static void NuevaInscripcion()
     {
         int banco;
-        Clientes.Add(tiquetera.DevolverUltimoId(), (new Cliente(IngresarString(""), IngresarString(""),
-        IngresarString(""), banco = IngresarEntero(""), IngresarDoubleVerif("", banco))));
+        Clientes.Add(tiquetera.DevolverUltimoId(), (new Cliente(IngresarString("Ingrese su DNI"), IngresarString("Ingrese su apellido"),
+        IngresarString("Ingrese su nombre"),
+        banco = IngresarEnteroVerif("Ingrese el tipo de entrada"),
+        IngresarDoubleVerif("Ingrese la cantidad a pagar (DEBE SER MAYOR A LA CANTIDAD PEDIDA POR TIPO DE ENTRADA)", banco))));
     }
     static void ObtenerEstadisticas()
     {
@@ -177,10 +182,11 @@ class Program
                 "\nFecha de inscripcion: " + Clientes[x].FechaInscripcion + "\nTipo de entrada: " + TipoEntradaEncontrada +
                 "\nTotal abonado: " + Clientes[x].TotalAbonado);
     }
-    static void CambioEntrada(int x)
+    static bool CambioEntrada(int x)
     {
-        Clientes[x].CambiarEntrada(IngresarEntero("Ingrese el nuevo tipo de entrada: \n1. Dia 1 con valor de 15.000 \n2. Dia 2 con valor de 30000 " +
+        bool Posible = Clientes[x].CambiarEntrada(IngresarEntero("Ingrese el nuevo tipo de entrada: \n1. Dia 1 con valor de 15.000 \n2. Dia 2 con valor de 30000 " +
         "\n3. Dia 3 con valor de 10000 \n4. Todos los dias con valor de 40000"), IngresarDouble("Ingrese el nuevo abonado"));
+        return Posible;
     }
     #endregion
 }

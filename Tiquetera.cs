@@ -9,7 +9,6 @@ class Tiquetera
         UltimoId++;
         return UltimoId;
     }
-  
     #endregion 
 
 }
