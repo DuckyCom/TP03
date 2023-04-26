@@ -124,9 +124,11 @@ class Program
     static void NuevaInscripcion()
     {
         int banco;
-        Clientes.Add(Tiquetera.DevolverUltimoId(), (new Cliente(IngresarString("Ingrese su DNI"), IngresarString("Ingrese su apellido"),
+        Cliente cli = new Cliente(IngresarString("Ingrese su DNI"), IngresarString("Ingrese su apellido"),
         IngresarString("Ingrese su nombre"), banco = IngresarEnteroVerif("Ingrese el tipo de entrada"),
-        IngresarDoubleVerif("Ingrese la cantidad a pagar (DEBE SER MAYOR A LA CANTIDAD PEDIDA POR TIPO DE ENTRADA)", banco))));
+        IngresarDoubleVerif("Ingrese la cantidad a pagar (DEBE SER MAYOR A LA CANTIDAD PEDIDA POR TIPO DE ENTRADA)", banco));
+        int ti = Tiquetera.DevolverUltimoId();
+        Clientes.Add(ti, cli);
     }
     static void ObtenerEstadisticas()
     {
@@ -158,6 +160,16 @@ class Program
                     break;
             }
         }
+        Console.WriteLine("La cantidad de clientes inscriptos es de: " + Clientes.Count() + "\n" +
+        "El porcentaje de tipo 1 es de: " + ((Clientes.Count() / dia1) * 100) + "\n" +
+        "Su recaudacion es de: " + dia1Recaudacion + "\n" +
+        "El porcentaje de tipo 2 es de: " + ((Clientes.Count() / dia2) * 100) + "\n" +
+        "Su recaudacion es de: " + dia2Recaudacion + "\n" +
+        "El porcentaje de tipo 3 es de: " + ((Clientes.Count() / dia3) * 100) + "\n" +
+        "Su recaudacion es de: " + dia3Recaudacion + "\n" +
+        "El porcentaje de tipo Full Pass es de: " + ((Clientes.Count() / fullPass) * 100) + "\n" +
+        "Su recaudacion es de: " + fullPassRecaudacion + "\n\n" + 
+        "La recaudacion total es de " + RecaudacionTotal);
     }
     static void BuscarCliente(int x)
     {

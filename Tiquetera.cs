@@ -4,7 +4,7 @@ class Tiquetera
     public static int UltimoId = 0;
     #endregion
     #region metodos
-    public int DevolverUltimoId()
+    public static int DevolverUltimoId()
     {
         UltimoId++;
         return UltimoId;
