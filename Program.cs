@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 class Program
 {
-    static Dictionary<int, Cliente> Clientes = new Dictionary<int, Cliente>();
-    static Tiquetera tiquetera;
+    public static Dictionary<int, Cliente> Clientes = new Dictionary<int, Cliente>();
+    public static Tiquetera Tiquetera;
     static void Main(string[] args)
     {
         bool Cambio;
@@ -124,9 +124,8 @@ class Program
     static void NuevaInscripcion()
     {
         int banco;
-        Clientes.Add(tiquetera.DevolverUltimoId(), (new Cliente(IngresarString("Ingrese su DNI"), IngresarString("Ingrese su apellido"),
-        IngresarString("Ingrese su nombre"),
-        banco = IngresarEnteroVerif("Ingrese el tipo de entrada"),
+        Clientes.Add(Tiquetera.DevolverUltimoId(), (new Cliente(IngresarString("Ingrese su DNI"), IngresarString("Ingrese su apellido"),
+        IngresarString("Ingrese su nombre"), banco = IngresarEnteroVerif("Ingrese el tipo de entrada"),
         IngresarDoubleVerif("Ingrese la cantidad a pagar (DEBE SER MAYOR A LA CANTIDAD PEDIDA POR TIPO DE ENTRADA)", banco))));
     }
     static void ObtenerEstadisticas()

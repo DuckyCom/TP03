@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47866146\\TP03\\TP02BOX_CW_FE.csproj",
-      "projectName": "TP02BOX_CW_FE",
-      "projectPath": "C:\\Users\\47866146\\TP03\\TP02BOX_CW_FE.csproj",
+      "projectUniqueName": "C:\\Users\\47866146\\TP03\\TP03.csproj",
+      "projectName": "TP03",
+      "projectPath": "C:\\Users\\47866146\\TP03\\TP03.csproj",
       "packagesPath": "C:\\Users\\47866146\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\47866146\\TP03\\obj\\",
       "projectStyle": "PackageReference",
@@ -56,8 +56,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -66,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
