@@ -64,43 +64,27 @@ class Program
     }
     static int IngresarEnteroVerif(string mensaje)
     {
-        int retorno = 0;
         Console.WriteLine(mensaje);
         int retorn = int.Parse(Console.ReadLine());
-        while (!(retorn <= 4 && retorn > 1))
+        while (!(retorn <= 4 && retorn >= 1))
         {
             Console.WriteLine("Error");
             Console.WriteLine(mensaje);
             retorn = int.Parse(Console.ReadLine());
         }
-        switch (retorn)
-        {
-            case 1:
-            retorno = 15000;
-                break;
-            case 2:
-            retorno = 30000;
-                break;
-            case 3:
-            retorno = 10000;
-                break;
-            case 4:
-            retorno = 40000;
-                break;
-        }
-        return retorno;
+        return retorn;
     }
-    static double IngresarDoubleVerif(string mensaje, double verif1)
+    static double IngresarDoubleVerif(string mensaje, int verif1)
     {
         Console.WriteLine(mensaje);
         double retorn = double.Parse(Console.ReadLine());
-        while (retorn < verif1)
+        while (retorn < TransformarPrecio(verif1))
         {
             Console.WriteLine("Error");
             Console.WriteLine(mensaje);
             retorn = double.Parse(Console.ReadLine());
         }
-        if((retorn - verif1) != 0)Console.WriteLine("El vuelto es de " + (retorn - verif1));
+        if((retorn - TransformarPrecio(verif1)) != 0)Console.WriteLine("El vuelto es de " + (retorn - TransformarPrecio(verif1)));
         return retorn;
     }
     static string IngresarString(string mensaje)
@@ -132,6 +116,7 @@ class Program
     }
     static void ObtenerEstadisticas()
     {
+        double porcentajeDia1 = 0, porcentajeDia2 = 0, porcentajeDia3 = 0, porcentajeFullPass = 0;
         int CantPersonasInscriptas = 0;
         double RecaudacionTotal = 0;
         double dia1Recaudacion = 0, dia2Recaudacion = 0, dia3Recaudacion = 0, fullPassRecaudacion = 0;
@@ -160,14 +145,18 @@ class Program
                     break;
             }
         }
+        porcentajeDia1 = CalcularPorcentaje(dia1, Clientes.Count);
+        porcentajeDia2 = CalcularPorcentaje(dia2, Clientes.Count);
+        porcentajeDia3 = CalcularPorcentaje(dia3, Clientes.Count);
+        porcentajeFullPass = CalcularPorcentaje(fullPass, Clientes.Count);
         Console.WriteLine("La cantidad de clientes inscriptos es de: " + Clientes.Count() + "\n" +
-        "El porcentaje de tipo 1 es de: " + ((Clientes.Count() / dia1) * 100) + "\n" +
+        "El porcentaje de tipo 1 es de: " + porcentajeDia1 + "%\n" +
         "Su recaudacion es de: " + dia1Recaudacion + "\n" +
-        "El porcentaje de tipo 2 es de: " + ((Clientes.Count() / dia2) * 100) + "\n" +
+        "El porcentaje de tipo 2 es de: " + porcentajeDia2 + "%\n" +
         "Su recaudacion es de: " + dia2Recaudacion + "\n" +
-        "El porcentaje de tipo 3 es de: " + ((Clientes.Count() / dia3) * 100) + "\n" +
+        "El porcentaje de tipo 3 es de: " + porcentajeDia3 + "%\n" +
         "Su recaudacion es de: " + dia3Recaudacion + "\n" +
-        "El porcentaje de tipo Full Pass es de: " + ((Clientes.Count() / fullPass) * 100) + "\n" +
+        "El porcentaje de tipo Full Pass es de: " + porcentajeFullPass + "%\n" +
         "Su recaudacion es de: " + fullPassRecaudacion + "\n\n" + 
         "La recaudacion total es de " + RecaudacionTotal);
     }
@@ -198,6 +187,30 @@ class Program
         bool Posible = Clientes[x].CambiarEntrada(IngresarEntero("Ingrese el nuevo tipo de entrada: \n1. Dia 1 con valor de 15.000 \n2. Dia 2 con valor de 30000 " +
         "\n3. Dia 3 con valor de 10000 \n4. Todos los dias con valor de 40000"), IngresarDouble("Ingrese el nuevo abonado"));
         return Posible;
+    }
+    static double TransformarPrecio(int entrada)
+    {
+        double retorn = 0;
+        switch (entrada)
+        {
+            case 1:
+            retorn = 15000;
+                break;
+            case 2:
+            retorn = 30000;
+                break;
+            case 3:
+            retorn = 10000;
+                break;
+            case 4:
+            retorn = 40000;
+                break;
+        }
+        return retorn;
+    }
+    static double CalcularPorcentaje(double valor1, double valor2)
+    {
+        return valor1*100 / valor2;
     }
     #endregion
 }

@@ -23,54 +23,44 @@ class Cliente
     public bool CambiarEntrada(int NuevaEntrada, double NuevoTotal)
     {   
         bool retorn = false;
-        if (TotalAbonado > NuevoTotal)
+        if (TipoEntrada < NuevaEntrada || NuevaEntrada == 3)
         {
-            Console.WriteLine("No se puede pasar de un pase mas caro a uno mas barato");
+            Console.WriteLine("No se puede pasar de un pase mas caro a uno mas barato (No se puede cambiar al tipo 3 debido a que es el pago mas barato)");
         }
-        else
+        else if (NuevaEntrada > 4 && NuevaEntrada <= 0)
         {
-            switch (NuevaEntrada)
-            {
-                case 1:
-                if (NuevoTotal > 15000)
-                {
-                    if((NuevoTotal - TotalAbonado) != 0)Console.WriteLine("El vuelto es de " + (NuevoTotal - TotalAbonado));
-                    TotalAbonado = NuevoTotal;
-                    TipoEntrada = NuevaEntrada;
-                    retorn = true;
-                    FechaInscripcion = DateTime.Now;
-                }
-                else Console.WriteLine("Pago insuficiente");
-                    break;
-                case 2:
-                if (NuevoTotal > 30000)
-                {
-                    if((NuevoTotal - TotalAbonado) != 0)Console.WriteLine("El vuelto es de " + (NuevoTotal - TotalAbonado));
-                    TotalAbonado = NuevoTotal;
-                    TipoEntrada = NuevaEntrada;
-                    retorn = true;
-                    FechaInscripcion = DateTime.Now;
-                }
-                else Console.WriteLine("Pago insuficiente");
-                    break;
-                case 4:
-                if (NuevoTotal > 40000)
-                {
-                    if((NuevoTotal - TotalAbonado) != 0)Console.WriteLine("El vuelto es de " + (NuevoTotal - TotalAbonado));
-                    TotalAbonado = NuevoTotal;
-                    TipoEntrada = NuevaEntrada;
-                    retorn = true;
-                    FechaInscripcion = DateTime.Now;
-                }
-                else Console.WriteLine("Pago insuficiente");
-                    break;
-                default:
-                Console.WriteLine("Tipo de entrada incorrecta (No se puede cambiar al tipo 3 debido a que es el pago mas barato)");
-                    break;
-                }
+            Console.WriteLine("Tipo de entrada incorrecta");
+        }
+        else if (NuevoTotal > TransformarPrecio(NuevaEntrada))
+        {
+            if((NuevoTotal - TransformarPrecio(NuevaEntrada)) != 0)Console.WriteLine("El vuelto es de " + (NuevoTotal - TransformarPrecio(NuevaEntrada)));
+            TotalAbonado = NuevoTotal;
+            TipoEntrada = NuevaEntrada;
+            retorn = true;
+            FechaInscripcion = DateTime.Now;
         }
         return retorn;
     }
     #endregion 
+    public static double TransformarPrecio(int entrada)
+    {
+        double retorn = 0;
+        switch (entrada)
+        {
+            case 1:
+            retorn = 15000;
+                break;
+            case 2:
+            retorn = 30000;
+                break;
+            case 3:
+            retorn = 10000;
+                break;
+            case 4:
+            retorn = 40000;
+                break;
+        }
+        return retorn;
+    }
 
 }
